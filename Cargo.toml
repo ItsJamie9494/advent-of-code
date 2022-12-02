@@ -1,5 +1,8 @@
 [workspace]
+default-members = ["runner"]
 members = [
+  # Runner tool
+  "runner",
   # Common utility functions
   "utils",
   
