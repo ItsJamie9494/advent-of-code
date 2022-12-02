@@ -2,21 +2,12 @@
 // DAY 1
 // COPYRIGHT (C) 2022 JAMIE MURPHY
 
-use std::{
-    fs::File,
-    io::{BufRead, Read},
-};
-
-fn get_input() -> Vec<u8> {
-    let mut vec = Vec::new();
-    let mut file = File::open("./day1/input.txt").expect("Missing Program Input");
-    file.read_to_end(&mut vec).expect("Could not read file");
-    vec
-}
+use utils::AOCInput;
 
 fn main() {
-    let input = get_input();
-    let lines = input.lines().map(|l| l.unwrap());
+    let input = AOCInput { date: "day1" };
+    let data: String = input.into();
+    let lines = data.lines().map(|l| l);
 
     // Add input together
     let mut data = Vec::new();
