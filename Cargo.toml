@@ -1,4 +1,8 @@
 [workspace]
 members = [
-  "day1"
+  # Common utility functions
+  "utils",
+  
+  "day1",
+  "day2"
 ]
