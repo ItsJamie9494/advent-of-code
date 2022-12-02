@@ -10,7 +10,7 @@ fn main() {
     let current_day = Utc::now().with_timezone(&EST);
     println!("{}", "Advent of Code 2022".bold().underline());
     println!(
-        "Current Day: {} ({})",
+        "Current Day: {} ({} EST)",
         current_day.day().bold(),
         current_day.format("%d/%m/%Y %H:%M").italic()
     );
@@ -20,6 +20,7 @@ fn main() {
     let args: Vec<String> = env::args().collect();
     if args.len() > 1 {
         current_project = args[1].parse::<u32>().expect("Failed to parse project");
+        println!("Running Project {}", current_project.bold());
     }
 
     Command::new("cargo")
