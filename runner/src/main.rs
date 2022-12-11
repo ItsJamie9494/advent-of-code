@@ -30,15 +30,18 @@ fn main() {
         .output()
         .unwrap();
 
-    println!(
-        "\n{} {} {}\n{}",
-        divider,
-        "OUTPUT".bold().green(),
-        divider,
-        String::from_utf8(output.stdout).unwrap()
-    );
+    let stdout: String = String::from_utf8(output.stdout).unwrap();
+    if !stdout.is_empty() {
+        println!(
+            "\n{} {} {}\n{}",
+            divider,
+            "OUTPUT".bold().green(),
+            divider,
+            stdout
+        );
+    }
     let error: String = String::from_utf8(output.stderr).unwrap();
-    if !error.contains("Running") {
+    if error.contains("thread") {
         println!(
             "\n{} {} {}\n{}",
             divider,
