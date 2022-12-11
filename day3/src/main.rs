@@ -4,7 +4,7 @@
 
 use std::{collections::HashSet, str::Chars};
 
-use utils::AOCInput;
+use utils::AdventOfCode;
 
 fn shared_characters(a: &str, b: &str) -> Vec<char> {
     let set: HashSet<char> = a.chars().collect();
@@ -22,7 +22,7 @@ fn alphabet_index(char: char) -> (usize, char) {
 }
 
 fn main() {
-    let input = AOCInput { date: "day3" };
+    let input = AdventOfCode::new(3);
     let data: String = input.into();
     let lines = data.lines();
     let lines_part_two = data.lines().collect::<Vec<&str>>();
@@ -66,5 +66,8 @@ fn main() {
 
     println!("\n\nThe sum of the rucksack priorities is {}", priority);
 
-    println!("\n\nThe sum of the rucksack badges is {}", priority_part_two);
+    println!(
+        "\n\nThe sum of the rucksack badges is {}",
+        priority_part_two
+    );
 }

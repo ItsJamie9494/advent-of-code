@@ -2,10 +2,10 @@
 // DAY 1
 // COPYRIGHT (C) 2022 JAMIE MURPHY
 
-use utils::AOCInput;
+use utils::AdventOfCode;
 
 fn main() {
-    let input = AOCInput { date: "day1" };
+    let input = AdventOfCode::new(1);
     let data: String = input.into();
     let lines = data.lines().map(|l| l);
 

@@ -2,7 +2,7 @@
 // DAY 4
 // COPYRIGHT (C) 2022 JAMIE MURPHY
 
-use utils::AOCInput;
+use utils::AdventOfCode;
 
 fn get_range(data: &str) -> (i32, i32) {
     data.split_once('-')
@@ -11,7 +11,7 @@ fn get_range(data: &str) -> (i32, i32) {
 }
 
 fn main() {
-    let input = AOCInput { date: "day4" };
+    let input = AdventOfCode::new(4);
     let data: String = input.into();
     let lines = data.lines();
     let mut total_contained_ranges = 0;

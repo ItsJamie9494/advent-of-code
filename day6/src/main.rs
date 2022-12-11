@@ -2,7 +2,7 @@
 // DAY 6
 // COPYRIGHT (C) 2022 JAMIE MURPHY
 
-use utils::AOCInput;
+use utils::AdventOfCode;
 
 // Determines if characters in a string are unique
 fn unique_characters(a: &str) -> bool {
@@ -31,7 +31,7 @@ fn find_marker(marker_length: usize, characters: &String) -> (String, usize) {
 }
 
 fn main() {
-    let input = AOCInput { date: "day6" };
+    let input = AdventOfCode::new(6);
     let data: String = input.into();
 
     println!(

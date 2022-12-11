@@ -4,7 +4,7 @@
 
 use std::cell::RefCell;
 
-use utils::AOCInput;
+use utils::AdventOfCode;
 
 #[derive(Debug)]
 struct Stack {
@@ -110,7 +110,7 @@ fn move_crates_grouped(stacks: &mut Vec<Stack>, command: Command) {
 }
 
 fn main() {
-    let input = AOCInput { date: "day5" };
+    let input = AdventOfCode::new(5);
     let data: String = input.into();
 
     // Split data into Crates and Commands

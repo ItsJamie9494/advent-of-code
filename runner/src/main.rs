@@ -4,9 +4,11 @@
 use chrono::{Datelike, Utc};
 use chrono_tz::EST;
 use owo_colors::OwoColorize;
-use std::{env, os::unix::process::CommandExt, process::Command};
+use std::{env, process::Command, time::Instant};
 
 fn main() {
+    let time = Instant::now();
+    let divider = "===".bold();
     let current_day = Utc::now().with_timezone(&EST);
     println!("{}", "Advent of Code 2022".bold().underline());
     println!(
@@ -23,7 +25,30 @@ fn main() {
         println!("Running Project {}", current_project.bold());
     }
 
-    Command::new("cargo")
+    let output = Command::new("cargo")
         .args(["run", "-p", &format!("day{}", current_project)])
-        .exec();
+        .output()
+        .unwrap();
+
+    println!(
+        "\n{} {} {}\n{}",
+        divider,
+        "OUTPUT".bold().green(),
+        divider,
+        String::from_utf8(output.stdout).unwrap()
+    );
+    let error: String = String::from_utf8(output.stderr).unwrap();
+    if !error.contains("Running") {
+        println!(
+            "\n{} {} {}\n{}",
+            divider,
+            "ERRORS".bold().red(),
+            divider,
+            error
+        );
+    }
+
+    let elapsed = time.elapsed().as_secs_f64();
+
+    println!("{}", format!("Took {:.2}s", elapsed).italic());
 }

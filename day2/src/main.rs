@@ -2,7 +2,7 @@
 // DAY 2
 // COPYRIGHT (C) 2022 JAMIE MURPHY
 
-use utils::AOCInput;
+use utils::AdventOfCode;
 
 #[derive(Clone, PartialEq, Eq, PartialOrd, Ord, Debug, Copy)]
 enum RPS {
@@ -132,7 +132,7 @@ fn calculate_rps_part_two(round: &Vec<&str>) -> Round {
 }
 
 fn main() {
-    let input = AOCInput { date: "day2" };
+    let input = AdventOfCode::new(2);
     let data: String = input.into();
     let lines = data.lines();
     let mut total_score_part_one = 0;
