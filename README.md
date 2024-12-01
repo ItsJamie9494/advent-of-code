@@ -3,20 +3,23 @@
 ## Usage
 
 `
-$ cargo run --bin $DAY $PART
+$ cargo run -- [COMMAND] (DAY) (ARGS)
 `
 
-Replace `$DAY` with a day (in the format of XX), and $PART with a
-part (in the format of X)
+If a day is not specified, the current date is used.
 
-The only valid parts are `1` and `2`, not including a part runs both.
+Valid Commands & Args:
+
+- `run` - Run a day
+    - `part`: A valid part, either `1` or `2`. Not specifying or specifying an invalid value runs all parts.
+- `scaffold` - Create a new day
 
 ```
 # Examples
-$ cargo run --bin 01 1    # Runs Part 1 of Day 1
-$ cargo run --bin 02 1    # Runs Part 2 of Day 2
-$ cargo run --bin 01 2    # Runs Part 2 of Day 1
-$ cargo run --bin 01      # Runs Day 1, Parts 1 and 2
-```
+$ cargo run -- run 01 1     # Runs Part 1 of Day 1
+$ cargo run -- run          # Runs todays code
+$ cargo run -- run 03       # Runs all parts of day 3
 
-When using an IDE, `default-run` in Cargo.toml may be adjusted to the current day.
+$ cargo run -- scaffold     # Create a new project for today
+$ cargo run -- scaffold 04  # Create a new project for Day 4
+```

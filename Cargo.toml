@@ -2,7 +2,9 @@
 name = "advent-of-code"
 version = "1.0.0"
 edition = "2021"
-default-run = "01"
+default-run = "advent-of-code"
 
 [dependencies]
 anyhow = "1.0.93"
+chrono = "0.4.38"
+chrono-tz = "0.10.0"

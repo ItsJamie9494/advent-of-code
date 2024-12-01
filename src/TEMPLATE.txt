@@ -1,7 +1,7 @@
 use advent_of_code::*;
 use anyhow::*;
 
-const DAY: &str = "99";
+const DAY: &str = "%DAY%";
 
 // ==== PART 1 ====
 fn part1() -> Result<()> {
