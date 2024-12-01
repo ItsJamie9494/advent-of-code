@@ -1,0 +1,9 @@
+[package]
+name = "advent-of-code"
+version = "1.0.0"
+edition = "2021"
+default-run = "01"
+
+[dependencies]
+anyhow = "1.0.93"
+

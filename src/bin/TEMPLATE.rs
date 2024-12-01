@@ -1,0 +1,22 @@
+use advent_of_code::*;
+use anyhow::*;
+
+const DAY: &str = "99";
+
+// ==== PART 1 ====
+fn part1() -> Result<()> {
+    // Solve Part 1
+
+    Ok(())
+}
+
+// ==== PART 2 ====
+fn part2() -> Result<()> {
+    // Solve Part 2
+
+    Ok(())
+}
+
+fn main() -> Result<()> {
+    start_day(DAY, &part1, &part2)
+}

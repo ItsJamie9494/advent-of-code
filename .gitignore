@@ -1,0 +1,8 @@
+# Rust Compiled Binaries
+/target
+
+# RustRover
+.idea/
+
+# These are automatically downloaded
+input/*.txt
