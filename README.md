@@ -1,5 +1,7 @@
 # Advent of Code
 
+my attempts at the advent of code challenges.
+
 ## Usage
 
 `
