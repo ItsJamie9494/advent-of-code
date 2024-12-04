@@ -2,7 +2,7 @@ mod aoc_helper;
 
 use anyhow::*;
 use std::fs::File;
-use std::io::{BufRead, BufReader};
+use std::io::{BufRead, BufReader, Read};
 use std::process;
 use std::result::Result::Ok;
 
@@ -71,4 +71,12 @@ pub fn input_as_lines(day: &str) -> Result<Vec<String>> {
     let lines: Vec<String> = file?.lines().collect::<Result<_, _>>()?;
 
     Ok(lines)
+}
+
+pub fn input_as_string(day: &str) -> Result<String> {
+    let file = get_input_file(day);
+    let mut buffer = String::new();
+    file?.read_to_string(&mut buffer)?;
+
+    Ok(buffer)
 }
