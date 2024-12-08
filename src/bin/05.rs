@@ -22,7 +22,7 @@ fn part1() -> Result<()> {
 
     let mut ret = 0;
     for line in page {
-        let mut s = line.split(",");
+        let s = line.split(",");
 
         let mut valid = true;
         for char in s.clone() {
